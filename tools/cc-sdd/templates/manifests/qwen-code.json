@@ -2,20 +2,38 @@
   "version": 1,
   "artifacts": [
     {
-      "id": "commands_os_mac",
+      "id": "commands_kiro_os_mac",
       "source": {
         "type": "templateDir",
-        "fromDir": "templates/agents/gemini-cli/commands/os-mac",
-        "toDir": "{{AGENT_COMMANDS_DIR}}"
+        "fromDir": "templates/agents/gemini-cli/commands/os-mac/kiro",
+        "toDir": ".qwen/commands/kiro"
       },
       "when": { "agent": "qwen-code", "os": ["mac"] }
     },
     {
-      "id": "commands_os_windows",
+      "id": "commands_kiro_rapid_os_mac",
       "source": {
         "type": "templateDir",
-        "fromDir": "templates/agents/gemini-cli/commands/os-windows",
-        "toDir": "{{AGENT_COMMANDS_DIR}}"
+        "fromDir": "templates/agents/gemini-cli/commands/os-mac/kiro-rapid",
+        "toDir": ".qwen/commands/kiro-rapid"
+      },
+      "when": { "agent": "qwen-code", "os": ["mac"] }
+    },
+    {
+      "id": "commands_kiro_os_windows",
+      "source": {
+        "type": "templateDir",
+        "fromDir": "templates/agents/gemini-cli/commands/os-windows/kiro",
+        "toDir": ".qwen/commands/kiro"
+      },
+      "when": { "agent": "qwen-code", "os": ["windows", "linux"] }
+    },
+    {
+      "id": "commands_kiro_rapid_os_windows",
+      "source": {
+        "type": "templateDir",
+        "fromDir": "templates/agents/gemini-cli/commands/os-windows/kiro-rapid",
+        "toDir": ".qwen/commands/kiro-rapid"
       },
       "when": { "agent": "qwen-code", "os": ["windows", "linux"] }
     },

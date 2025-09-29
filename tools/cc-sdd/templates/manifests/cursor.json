@@ -2,11 +2,20 @@
   "version": 1,
   "artifacts": [
     {
-      "id": "commands_all_os",
+      "id": "commands_kiro_all_os",
       "source": {
         "type": "templateDir",
-        "fromDir": "templates/agents/{{AGENT}}/commands/os-mac",
-        "toDir": "{{AGENT_COMMANDS_DIR}}"
+        "fromDir": "templates/agents/{{AGENT}}/commands/os-mac/kiro",
+        "toDir": ".cursor/commands/kiro"
+      },
+      "when": { "agent": "cursor", "os": ["mac", "windows", "linux"] }
+    },
+    {
+      "id": "commands_kiro_rapid_all_os",
+      "source": {
+        "type": "templateDir",
+        "fromDir": "templates/agents/{{AGENT}}/commands/os-mac/kiro-rapid",
+        "toDir": ".cursor/commands/kiro-rapid"
       },
       "when": { "agent": "cursor", "os": ["mac", "windows", "linux"] }
     },

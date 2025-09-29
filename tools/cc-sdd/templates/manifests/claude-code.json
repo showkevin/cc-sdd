@@ -2,20 +2,38 @@
   "version": 1,
   "artifacts": [
     {
-      "id": "commands_os_mac",
+      "id": "commands_kiro_os_mac",
       "source": {
         "type": "templateDir",
-        "fromDir": "templates/agents/{{AGENT}}/commands/os-mac",
-        "toDir": "{{AGENT_COMMANDS_DIR}}"
+        "fromDir": "templates/agents/{{AGENT}}/commands/os-mac/kiro",
+        "toDir": ".claude/commands/kiro"
       },
       "when": { "agent": "claude-code", "os": ["mac"] }
     },
     {
-      "id": "commands_os_windows",
+      "id": "commands_kiro_rapid_os_mac",
       "source": {
         "type": "templateDir",
-        "fromDir": "templates/agents/{{AGENT}}/commands/os-windows",
-        "toDir": "{{AGENT_COMMANDS_DIR}}"
+        "fromDir": "templates/agents/{{AGENT}}/commands/os-mac/kiro-rapid",
+        "toDir": ".claude/commands/kiro-rapid"
+      },
+      "when": { "agent": "claude-code", "os": ["mac"] }
+    },
+    {
+      "id": "commands_kiro_os_windows",
+      "source": {
+        "type": "templateDir",
+        "fromDir": "templates/agents/{{AGENT}}/commands/os-windows/kiro",
+        "toDir": ".claude/commands/kiro"
+      },
+      "when": { "agent": "claude-code", "os": ["windows", "linux"] }
+    },
+    {
+      "id": "commands_kiro_rapid_os_windows",
+      "source": {
+        "type": "templateDir",
+        "fromDir": "templates/agents/{{AGENT}}/commands/os-windows/kiro-rapid",
+        "toDir": ".claude/commands/kiro-rapid"
       },
       "when": { "agent": "claude-code", "os": ["windows", "linux"] }
     },
