@@ -89,13 +89,15 @@ cd /path/to/your/project
 node /path/to/cc-sdd/tools/cc-sdd/dist/cli.js --lang zh-TW
 
 # 3. 驗證安裝結果
-ls -la .claude/commands/kiro/  # Claude Code 指令
-ls -la .kiro/                  # 規格與指導目錄
-cat CLAUDE.md                  # 專案配置檔案
+ls -la .claude/commands/kiro/           # 標準 Kiro 指令
+ls -la .claude/commands/kiro/kiro-rapid/ # 🆕 Rapid MVP 指令
+ls -la .kiro/                           # 規格與指導目錄
+cat CLAUDE.md                           # 專案配置檔案
 ```
 
 ### 完整開發工作流程
 
+#### 標準 Kiro 流程（成熟專案）
 ```bash
 # 1. 使用本地版本安裝 cc-sdd（繁體中文）
 node /path/to/cc-sdd/tools/cc-sdd/dist/cli.js --lang zh-TW
@@ -107,6 +109,17 @@ node /path/to/cc-sdd/tools/cc-sdd/dist/cli.js --lang zh-TW
 /kiro:spec-design auth-system                  # 技術設計
 /kiro:spec-tasks auth-system                   # 實作任務
 /kiro:spec-impl auth-system                    # TDD 實作
+```
+
+#### 🆕 Kiro-Rapid 流程（新創 MVP）
+```bash
+# 快速 MVP 開發流程（1 週內完成 Demo）
+/kiro-rapid:init "電商購物車系統"              # 30 秒啟動專案
+/kiro-rapid:demo "加入購物車功能"              # 直接寫 Demo
+/kiro-rapid:run                                # 執行並展示
+/kiro-rapid:feedback                           # 收集回饋
+/kiro-rapid:iterate "優化結帳流程"             # 快速迭代
+/kiro-rapid:status                             # 查看進度
 ```
 
 ## 🔧 開發與測試
@@ -139,13 +152,14 @@ node dist/cli.js --help
 **本地開發版本優勢：**
 - 🔄 即時使用最新修改
 - 🛠️ 可自由客製化功能
-- 🌐 支援所有最新功能（v1.1.5）
+- 🌐 支援所有最新功能（v1.1.5+rapid）
 - 🎯 無需網路連線
 - 🚀 包含所有最新改進：
   - Qwen Code 支援
   - 12 種語言支援
   - 模板檔案優化
   - 錯誤處理改善
+  - **🆕 Kiro-Rapid MVP 快速開發系統**
 
 ## 📝 注意事項
 
@@ -163,6 +177,32 @@ node dist/cli.js --help
 | 修改能力 | 無法修改 | 可自由修改 |
 | 網路需求 | 需要網路 | 無需網路 |
 | 功能更新 | 等待 npm 發布 | 即時可用 |
+| **Kiro-Rapid** | ❌ 不包含 | ✅ 包含 MVP 快速開發 |
+
+## 🚀 Kiro-Rapid MVP 系統
+
+**本地版本獨有功能** - 專為新創和 MVP 快速開發設計：
+
+### 兩套系統對比
+| 特性 | Kiro Standard (`/kiro:`) | Kiro Rapid (`/kiro-rapid:`) |
+|------|--------------------------|----------------------------|
+| **適用場景** | 需求明確的成熟專案 | 新創 MVP 快速驗證 |
+| **開發順序** | Spec→Requirements→Design→Code | Code→Demo→Feedback→Iterate |
+| **測試策略** | TDD 優先 | Demo 優先，測試延後 |
+| **時間目標** | 2-3 週完整流程 | 1 週內可展示 Demo |
+
+### Kiro-Rapid 命令清單
+- `/kiro-rapid:init` - 30 秒啟動專案
+- `/kiro-rapid:demo` - 直接寫 Demo 功能
+- `/kiro-rapid:run` - 執行並展示
+- `/kiro-rapid:feedback` - 收集用戶回饋
+- `/kiro-rapid:iterate` - 快速迭代調整
+- `/kiro-rapid:lock` - 鎖定核心功能
+- `/kiro-rapid:contract` - 補充契約測試
+- `/kiro-rapid:core-test` - 核心邏輯測試
+- `/kiro-rapid:refactor` - 清理技術債
+- `/kiro-rapid:evolve` - 升級為正式產品
+- `/kiro-rapid:status` - 查看當前階段
 
 ## 🔗 相關文檔
 
